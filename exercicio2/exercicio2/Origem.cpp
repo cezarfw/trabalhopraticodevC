@@ -1,30 +1,34 @@
+//CARREGANDO BIBLIOTECAS
 #include<stdio.h>
 #include<stdlib.h>
-#define comparacao(x,y) x>y?x:y
+#define comparacao(x,y) x>y?x:y    //DEFININDO FUNCAO DE COMPARACAO
 
 int main() {
 
-	int RU1, RU2, *PTR_RU1, *PTR_RU2;
+	int RU1, RU2, *PTR_RU1, *PTR_RU2; //DECLARACAO DE VARIAVEIS E PONTEIROS DO TIPO INT
 
-	printf("\nCOLETANDO OS DADOS DO USUARIO\n\n");
+	printf("\nCOLETANDO OS DADOS DO USUARIO\n\n"); //IMPRIMINDO MENSAGEM NA TELA
 
-	printf("Digite o primeiro RU: ");
-	scanf_s("%d", &RU1);
-	printf("Digite o segundo RU: ");
-	scanf_s("%d", &RU2);
+	printf("Digite o primeiro RU: "); //IMPRIMINDO MENSAGEM NA TELA
+	scanf_s("%d", &RU1); //CAPTURANDO VALOR DIGITADO PELO USUARIO E ARMAZENANDO NA VARIAVEL RU1
+	printf("Digite o segundo RU: "); //IMPRIMINDO MENSAGEM NA TELA
+	scanf_s("%d", &RU2); //CAPTURANDO VALOR DIGITADO PELO USUARIO E ARMAZENANDO NA VARIAVEL RU2
 
-	PTR_RU1 = &RU1;
-	PTR_RU2 = &RU2;
+	PTR_RU1 = &RU1; //ASSOCIANDO VARIAVEL RU1 AO PONTEIRO PTR_RU1
+	PTR_RU2 = &RU2; //ASSOCIANDO VARIAVEL RU2 AO PONTEIRO PTR_RU2
 
-	printf("\n\nIMPRIMINDO OS DADOS DIGITADOS\n\n");
+	printf("\n---------------------------------------------------------\n\n");
 
-	printf("O primeiro RU digitado eh %d e o segundo eh %d\n\n", *PTR_RU1, *PTR_RU2);
+	printf("IMPRIMINDO OS DADOS DIGITADOS\n\n"); //IMPRIMINDO MENSAGEM NA TELA
 
-	printf("O maior numero entre os dois RU eh %d\n\n", comparacao(*PTR_RU1,*PTR_RU2));
+	printf("O primeiro RU digitado eh %d e o segundo eh %d\n\n", *PTR_RU1, *PTR_RU2); //IMPRIMINDO MENSAGEM COM OS VALORES DOS PONTEIROS
+
+	printf("O maior numero entre os dois RU eh %d\n\n", comparacao(*PTR_RU1,*PTR_RU2)); //IMPRIMINDO MENSAGEM E CHAMANDO A FUNCAO DE 
+	//COMPARACAO DECLARADO NO DEFINE INFORMANDO QUAL NUMERO DE RU EH MAIOR
 
 
-	system("pause");
-	return 0;
+	system("pause"); //PAUSE NA EXECUÇÃO PARA CONSEGUIRMOS VER O RESULTADO
+	return 0; // RETORNO 0 PARA INDICAR QUE A EXECUÇÃO FOI REALIZADA COM EXITO
 		
 
 }

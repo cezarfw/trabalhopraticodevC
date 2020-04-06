@@ -1,31 +1,33 @@
+//CARREGANDO BIBLIOTECAS
 #include<stdio.h>
 #include<stdlib.h>
 
 int main() {
 
-	printf("\nRECEBENDO DADOS DO ALUNO\n\n");
+	printf("\nRECEBENDO DADOS DO ALUNO\n\n"); //IMPRIMINDO MENSAGEM NA TELA DO USUARIO 
 
-	struct aluno
+	struct aluno  //DECLARANDO STRUCT COM DOIS CAMPOS COMO VALORES DE ENTRADA, CHAR E INT
 	{
-		char nome[50];
-		int ru;
-	}; struct aluno dados, *ptr_dados_aluno;
+		char nome[50];  //DECLARANDO ARRAY DO TIPO CHAR COM NOME DO ALUNO COM 50 CARACTERES
+		int ru; //DECLARANDO VARIAVEL DO TIPO INT COM RU DO ALUNO
+	}; struct aluno dados, *ptr_dados_aluno; //PASSANDO A VARIAVEL DADOS_ALUNO COMO A QUAL SERA REFERENCIADA A STRUCT E DECLARANDO UM PONTEIRO QUE IRA TAMBÉM FAZER REFERENCIA A STRUCT
 
-	ptr_dados_aluno = &dados;
 
-	printf("Nome do aluno: ");
-	fflush(stdin);
-	fgets((*ptr_dados_aluno).nome, 50, stdin);
+	ptr_dados_aluno = &dados; //ASSOCIANDO A VARIAVEL DADOS AO PONTEIRO PRT_DADOS_ALUNO QUE SERA UTILIZADA PARA REFERENCIAR A STRUCT
 
-	printf("\nNumero do RU: ");
-	scanf_s("%d", &(*ptr_dados_aluno).ru);
+	printf("Nome do aluno: ");  //IMPRIMINDO MENSAGEM NA TELA DO USUARIO
+	fflush(stdin); //LIMPANDO BUFFER DO DISPOSITIVO DE ENTRADA PADRAO, NESTE CASO TECLADO
+	fgets((*ptr_dados_aluno).nome, 50, stdin); //CAPTURANDO ENTRADA DE DADOS A PARTIR DO TECLADO E ARMAZENANDO NO PONTEIRO PTR_DADOS_ALUNO NO CAMPO NOME
 
-	printf("\n\n-------------------------------------\n\n");
-	printf("IMPRESSAO DOS DADOS INFORMADOS\n\n");
+	printf("\nNumero do RU: "); //IMPRIMINDO MENSAGEM NA TELA DO USUARIO 
+	scanf_s("%d", &(*ptr_dados_aluno).ru); //CAPTURANDO O VALOR DIGITADO E ARMAZENANDO NO PONTEIRO PTR_DADOS_ALUNO NO CAMPO RU
 
-	printf("Nome do aluno informado: %s\n", (*ptr_dados_aluno).nome);
-	printf("Numero do RU informado: %i\n\n\n", (*ptr_dados_aluno).ru);
+	printf("\n\n-------------------------------------\n\n"); //IMPRIMINDO MENSAGEM NA TELA DO USUARIO
+	printf("IMPRESSAO DOS DADOS INFORMADOS\n\n"); //IMPRIMINDO MENSAGEM NA TELA DO USUARIO 
 
-	system("pause");
-	return 0;
+	printf("Nome do aluno informado: %s\n", (*ptr_dados_aluno).nome); //IMPRIMINDO MENSAGEM COM VALOR ARMAZENADO NA VARIAVEL DADOS E REFERENCIADO PELO PONTEIRO PTR_DADOS_ALUNO NO CAMPO NOME
+	printf("Numero do RU informado: %i\n\n\n", (*ptr_dados_aluno).ru); //IMPRIMINDO MENSAGEM COM VALOR ARMAZENADO NA VARIAVEL DADOS E REFERENCIADO PELO PONTEIRO PTR_DADOS_ALUNO NO CAMPO RU
+
+	system("pause"); //PAUSE NA EXECUÇÃO PARA CONSEGUIRMOS VER O RESULTADO
+	return 0; // RETORNO 0 PARA INDICAR QUE A EXECUÇÃO FOI REALIZADA COM EXITO
 }
